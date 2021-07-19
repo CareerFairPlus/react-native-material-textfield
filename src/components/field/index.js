@@ -193,6 +193,16 @@ export default class TextField extends PureComponent {
     };
   }
 
+  getDerivedStateFromProps(props, state) {
+    if (null != props.value) {
+      return {
+        ...state,
+        text: props.value,
+      };
+    }
+    return null;
+  }
+
   componentDidMount() {
     this.mounted = true;
   }
